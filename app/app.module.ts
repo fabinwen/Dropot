@@ -3,12 +3,13 @@ import { NativeScriptModule } from "nativescript-angular/platform";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 import { AppComponent } from "./app.component";
-import {CameraComponent} from './pages/camera/camera.component';
-import {routes} from './app.routes';
+import { CameraComponent } from './pages/camera/camera.component';
+import { routes, navigatableComponents } from './app.routes';
+import { BottomBarComponent } from './pages/bottom/bottom-bar.component';
 
 @NgModule({
-    declarations: [AppComponent],
-    entryComponents: [CameraComponent],
+    declarations: [AppComponent, BottomBarComponent,
+        ...navigatableComponents],
     bootstrap: [AppComponent],
     imports: [NativeScriptModule,
         NativeScriptRouterModule,

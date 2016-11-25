@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Page } from "ui/page";
 import { ImageAsset } from "image-asset";
 import * as camera from "nativescript-camera";
 
 @Component({
     selector: 'dropot-camera',
-    templateUrl: 'camera.component.html'
+    templateUrl: 'pages/camera/camera.component.html'
 })
 export class CameraComponent implements OnInit {
     // >> camera-module-photo-code
@@ -14,6 +14,8 @@ export class CameraComponent implements OnInit {
     public keepAspectRatio: boolean = true;
     public width: number = 300;
     public height: number = 300;
+
+    constructor(private page:Page){}
 
     onTakePhoto() {
         var options = { width: this.width, height: this.height, keepAspectRatio: this.keepAspectRatio,  saveToGallery: this.saveToGallery };
@@ -40,5 +42,7 @@ export class CameraComponent implements OnInit {
     }
     // << camera-module-avai-code
 
-    ngOnInit() { }
+    ngOnInit() {
+        //this.page.actionBarHidden = true;
+     }
 }

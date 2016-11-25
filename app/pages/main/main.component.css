@@ -1,0 +1,24 @@
+ScrollView {
+  opacity: 0;
+}
+.visible {
+  animation-name: show;
+  animation-duration: 1s;
+}
+@keyframes show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.img-desc{
+  background-color:#000;  
+  opacity:0.3;  
+  -moz-opacity:0.3;
+  -khtml-opacity: 0.3;
+  color:#eee;
+  width: 100%
+}
+.top-media-container{
+  max-width: 100%;
+  height: 300
+}

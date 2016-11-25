@@ -1,22 +1,17 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Page } from "ui/page";
+import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
     selector: "my-app",
     templateUrl: "app.component.html",
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     public counter: number = 16;
+    public showBar: Boolean = true;
+    constructor(public page: Page, private routerExtensions: RouterExtensions) {
+        this.page.backgroundSpanUnderStatusBar = true;
+    }
 
-    public get message(): string {
-        if (this.counter > 0) {
-            return this.counter + " taps left";
-        } else {
-            alert("OVER");
-            return "Hoorraaay! \nYou are ready to start building!";
-        }
-    }
-    
-    public onTap() {
-        this.counter--;
-    }
+    ngOnInit() { }
 }

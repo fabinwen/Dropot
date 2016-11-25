@@ -1,8 +1,12 @@
-import {AppComponent} from './app.component';
 import {CameraComponent} from './pages/camera/camera.component';
+import {MainComponent} from './pages/main/main.component';
 
 export const routes = [
-    { path: "", redirectTo: "/index", pathMatch: "full" },
-    { path: "index", component: AppComponent },
+    { path: "", redirectTo: "/main", pathMatch: "full" },
+    { path: "main", component:MainComponent},
     { path: "camera", component: CameraComponent }
+];
+
+export const navigatableComponents = [
+  CameraComponent, MainComponent
 ];

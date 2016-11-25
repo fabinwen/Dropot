@@ -1,0 +1,23 @@
+<ActionBar title="首页">
+    <ActionItem ios.systemIcon="9" ios.position="left" android.systemIcon="ic_menu_share" android.position="actionBar"></ActionItem>
+    <ActionItem ios.systemIcon="16" ios.position="right" text="拍照" android.position="popup"></ActionItem>
+</ActionBar>
+<DockLayout stretchLastChild="true">
+    <bottom-bar dock="bottom"></bottom-bar>
+    <ScrollView exampleTitle toggleNavButton (scroll)="onScroll($event)" (swipe)="onSwipe($event)" class="visible">
+        <FlexboxLayout flexDirection="column" >
+            <AbsoluteLayout backgroundColor="lightgray" flexGrow="1" class="top-media-container" horizontalAlignment="stretch">
+                <Image #img style.zIndex="1" [src]="imageSrc" stretch="fill"></Image>
+                <Label flexGrow="1" text="这张图片很不错" style.zIndex=2  left="0" top="1" class="p-15 img-desc" textWrap="true" ></Label>
+            </AbsoluteLayout>
+
+            <FlexboxLayout #content style.zIndex="2" flexDirection="row">
+                <Label flexGrow="1" [text]="title" class="h2 p-l-15 p-r-15 p-t-15" textWrap="true"></Label>
+                <Label flexGrow="1" [text]="desc" class="p-15" textWrap="true"></Label>
+                <Label flexGrow="1" [text]="desc" class="p-15" textWrap="true"></Label>
+                <Label flexGrow="1" [text]="desc" class="p-15" textWrap="true"></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+    </ScrollView>
+
+</DockLayout>
