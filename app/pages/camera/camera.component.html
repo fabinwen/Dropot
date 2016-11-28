@@ -3,7 +3,7 @@
     <ActionItem ios.systemIcon="16" ios.position="right" text="拍照" android.position="popup"></ActionItem>
 </ActionBar>
 <DockLayout stretchLastChild="true">
-    <bottom-bar dock="bottom"></bottom-bar>
+    <bottom-bar dock="bottom" [isPublish]="true"></bottom-bar>
     <ScrollView>
         <FlexboxLayout flexDirection="column-reverse">
             <Image [src]="imageTaken" flexGrow="3" class="p-15 img-rounded"></Image>

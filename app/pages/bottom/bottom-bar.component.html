@@ -1,5 +1,23 @@
-<GridLayout *ngIf="showBar" backgroundColor="lightgray" columns="*,*,*" rows="auto" dock="bottom">
-    <Button text="首页" row="0" col="0" backgroundColor="#0099CC" margin="2" (tap)="goHome()"></Button>
-    <Button text="发现" row="0" col="1" backgroundColor="#CCFFFF" margin="2" (tap)="gotoMore()"></Button>
-    <Button text="我" row="0" col="2" backgroundColor="#8C489F" margin="2" (tap)="gotoProfile()"></Button>
-</GridLayout>
+<FlexboxLayout *ngIf="showBar" backgroundColor="lightgray" dock="bottom" justifyContent="space-between">
+    
+    <!--<StackLayout orientation="vertical" class="item-container" (tap)="goHome()" >
+        <Image src="~/images/ic_home_black.png" stretch="none"></Image>
+        <Label text="首页" style="font-size:13"></Label>
+    </StackLayout>-->
+    <FlexboxLayout flexDirection="column" class="item-container"  (tap)="goHome()"  alignItems="center" [class.current]="isHome">
+        <Image  flexAlignSelf="flex-end"  src="~/images/ic_home_black.png" stretch="none"></Image>
+        <Label text="首页" style="font-size:13"></Label>
+    </FlexboxLayout>
+    <FlexboxLayout flexDirection="column" class="item-container" (tap)="gotoMore()"  alignItems="center"  [class.current]="isPublish">
+        <Image src="~/images/ic_home_black.png" stretch="none"></Image>
+        <Label text="发布" style="font-size:13"></Label>
+    </FlexboxLayout>
+    <FlexboxLayout flexDirection="column" class="item-container" (tap)="gotoMore()"  alignItems="center">
+        <Image src="~/images/ic_home_black.png" stretch="none"></Image>
+        <Label text="发现" style="font-size:13"></Label>
+    </FlexboxLayout>
+    <FlexboxLayout flexDirection="column" class="item-container" (tap)="gotoProfile()" alignItems="center">
+        <Image src="~/images/ic_home_black.png" stretch="none"></Image>
+        <Label text="我" style="font-size:13"></Label>
+    </FlexboxLayout>
+</FlexboxLayout>
